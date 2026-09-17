@@ -94,7 +94,7 @@ ESP32 Arduino → ESP32 Dev Module
 Select the correct COM port before uploading.
 📂 Project Structure
 Recommended GitHub repository structure:
-Autonomous-Parking-Vehicle/
+Autonomous-Intelligent-Parking-Vehicle/
 │
 ├── README.md
 │
