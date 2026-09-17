@@ -1,5 +1,7 @@
 🚗 Autonomous Parking Vehicle — ESP32
 An IoT-based Autonomous Parking Vehicle using ESP32, ultrasonic distance sensors, an 8-bit IR sensor array, and a motor driver. The system detects obstacles, maintains vehicle alignment, and performs an automated reverse-parking sequence.
+
+
 📌 Project Overview
 The vehicle uses multiple sensors to understand its surroundings:
 - 4 × HC-SR04 Ultrasonic Sensors — front, rear, left, and right obstacle detection
@@ -9,6 +11,8 @@ The vehicle uses multiple sensors to understand its surroundings:
 - 4 × DC Motors — vehicle movement
 - Buck Converter — regulated power for the ESP32
 - 4 × 1.5 V Batteries — vehicle power source
+
+
 ⚙️ Features
 - Front obstacle detection
 - Rear obstacle detection during reverse parking
@@ -19,6 +23,8 @@ The vehicle uses multiple sensors to understand its surroundings:
 - 8-bit IR boundary detection
 - State-machine-based control
 - Serial Monitor sensor monitoring
+
+
 🧠 Parking Control Logic
 The system operates through the following states:
 APPROACH
@@ -38,6 +44,8 @@ EMERGENCY STOP
 Obstacle Clear
        ↓
 Resume
+
+
 🔌 ESP32 Pin Configuration
 Ultrasonic Sensors
 Sensor	Position	TRIG	ECHO
@@ -80,9 +88,8 @@ Power architecture:
                             ▼
                           ESP32
 Important: Adjust the buck converter to approximately 5 V before connecting it to the ESP32 VIN/5V input.
-Four ultrasonic sensors require:
-- 4 × 1 kΩ resistors
-- 4 × 2 kΩ resistors
+
+
 💻 Software Requirements
 Arduino IDE
 Install:
@@ -92,6 +99,8 @@ Select:
 Board:
 ESP32 Arduino → ESP32 Dev Module
 Select the correct COM port before uploading.
+
+
 📂 Project Structure
 Recommended GitHub repository structure:
 Autonomous-Intelligent-Parking-Vehicle/
@@ -112,6 +121,8 @@ Autonomous-Intelligent-Parking-Vehicle/
 │
 └── Images/
     └── prototype.jpg
+
+  
 🚀 How to Upload the ESP32 Code
 1. Download/install Arduino IDE.
 2. Install the ESP32 board package.
@@ -126,6 +137,8 @@ Tools → Port → COMx
 If the IDE gets stuck at:
 Connecting........
 press and hold the BOOT button on the ESP32 while uploading, then release it once the upload begins.
+
+
 🖥️ Serial Monitor
 After uploading:
 Tools → Serial Monitor
@@ -146,6 +159,8 @@ STATE: REVERSE PARKING
 ==============================
         VEHICLE PARKED
 ==============================
+
+
 🛡️ Safety
 - Do not connect HC-SR04 ECHO directly to ESP32 GPIO when using 5 V logic.
 - Verify the buck converter output with a multimeter before connecting the ESP32.
@@ -153,6 +168,8 @@ STATE: REVERSE PARKING
 - Check the motor driver's current capability before connecting two motors to one output channel.
 - Test the vehicle with the wheels lifted before the first full-power movement.
 - Keep the emergency-stop logic enabled during testing.
+
+
 🔧 Future Improvements
 - Wi-Fi-based vehicle monitoring
 - Web/mobile dashboard
@@ -164,6 +181,8 @@ STATE: REVERSE PARKING
 - Battery voltage monitoring
 - IoT cloud data logging
 - Mobile app control
+
+
 👨‍💻 Project
 Autonomous Parking Vehicle Using ESP32
 Domain: IoT • Embedded Systems • Autonomous Vehicles • Robotics
