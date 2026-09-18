@@ -93,30 +93,36 @@ Four HC-SR04 sensors are positioned around the vehicle.
 | HC-SR04 #4 | Right | GPIO 14 | GPIO 33 |
 
 Sensor Arrangement
-                       FRONT
-                         │
-                    ┌────▼────┐
-                    │ HC-SR04 │
-                    │    F    │
-                    └────┬────┘
-                         │
-              ┌──────────┴──────────┐
-              │                     │
-        ┌─────┴─────┐         ┌─────┴─────┐
-        │ HC-SR04   │         │ HC-SR04   │
-        │    LEFT   │         │   RIGHT   │
-        └─────┬─────┘         └─────┬─────┘
-              │                     │
-              │      VEHICLE        │
-              │       ESP32         │
-              │       L298N         │
-              │                     │
-              └──────────┬──────────┘
-                         │
-                    ┌────▼────┐
-                    │ HC-SR04 │
-                    │  REAR   │
-                    └─────────┘
+
+                    FRONT                   
+                      │
+                 ┌────▼────┐
+                 │ HC-SR04 │
+                 │  FRONT  │
+                 └────┬────┘
+                      │
+          ┌───────────┴───────────┐
+          │                       │
+     ┌────▼────┐             ┌────▼────┐
+     │ HC-SR04 │             │ HC-SR04 │
+     │  LEFT   │             │  RIGHT  │
+     └────┬────┘             └────┬────┘
+          │                       │
+          │      ┌─────────┐      │
+          └──────► VEHICLE ◄──────┘
+                 │         │
+                 │  ESP32  │
+                 │         │
+                 │  L298N  │
+                 └────┬────┘
+                      │
+                 ┌────▼────┐
+                 │ HC-SR04 │
+                 │  REAR   │
+                 └────┬────┘
+                      │
+                     REAR
+                     
 **🚘 Motor Driver Connections**
 The project uses an L298N motor driver.
 | L298N Pin | ESP32 GPIO |
