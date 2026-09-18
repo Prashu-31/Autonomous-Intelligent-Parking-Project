@@ -316,10 +316,7 @@ The simulation includes:
     │   └── circuit_diagram.png
     │
     ├── Documentation/
-    │   └── project_report.pdf
-    │
-    └── Images/
-        └── prototype.jpg
+        └── project_report.pdf
         
 🚀 How to Upload the ESP32 Program
 1. Install Arduino IDE
