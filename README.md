@@ -190,6 +190,7 @@ The shift register allows all eight IR sensor states to be read using only three
 The project uses four 1.5V cells.
 1.5V + 1.5V + 1.5V + 1.5V ≈ 6V
 Power distribution:
+
                   6V BATTERY
                       │
             ┌─────────┴─────────┐
@@ -205,29 +206,15 @@ Power distribution:
                               ESP32
 The buck converter is adjusted to provide approximately 5V for the ESP32 power input.
 All modules must share a common ground.
-Battery GND
+
+    Battery GND
      │
      ├──── L298N GND
      ├──── Buck Converter GND
      ├──── ESP32 GND
      ├──── Ultrasonic GND
      └──── IR Array GND
-⚠️ Ultrasonic ECHO Protection
-The HC-SR04 sensors operate from 5V, while ESP32 GPIO logic is 3.3V.
-A voltage divider is used on every ECHO signal.
-HC-SR04 ECHO
-      │
-     1kΩ
-      │
-      ├──────────── ESP32 GPIO
-      │
-     2kΩ
-      │
-     GND
-Four sensor channels require:
-- 4 × 1kΩ
-- 4 × 2kΩ
-This provides approximately 3.3V at the ESP32 input.
+
 🧩 Complete GPIO Table
 Function	ESP32 GPIO
 Front TRIG	GPIO 25
@@ -251,6 +238,7 @@ IR LOAD	GPIO 13
 
 🧠 Autonomous Parking Algorithm
 The vehicle uses a finite-state-machine approach.
+
                     ┌──────────────┐
                     │   APPROACH   │
                     └──────┬───────┘
@@ -275,6 +263,7 @@ The vehicle uses a finite-state-machine approach.
                     │    PARKED    │
                     └──────────────┘
 At any point where an unsafe obstacle is detected:
+
               ┌─────────────────┐
               │  EMERGENCY STOP │
               └────────┬────────┘
@@ -292,9 +281,8 @@ Parking distance	12 cm
 Normal motor speed	170
 Turning speed	150
 Slow parking speed	110
-
-
 These values can be adjusted according to the physical vehicle, sensor placement, and parking environment.
+
 💻 Software
 Development Environment
 - Arduino IDE
@@ -311,25 +299,28 @@ The simulation includes:
 - Parking state machine
 - Emergency-stop logic
 - Vehicle trajectory
+
 📂 Recommended Repository Structure
-Autonomous-Parking-Vehicle/
-│
-├── README.md
-│
-├── ESP32/
-│   └── autonomous_parking.ino
-│
-├── MATLAB/
-│   └── autonomous_parking_simulation.m
-│
-├── Circuit/
-│   └── circuit_diagram.png
-│
-├── Documentation/
-│   └── project_report.pdf
-│
-└── Images/
-    └── prototype.jpg
+
+    Autonomous-Parking-Vehicle/
+    │
+    ├── README.md
+    │
+    ├── ESP32/
+    │   └── autonomous_parking.ino
+    │
+    ├── MATLAB/
+    │   └── autonomous_parking_simulation.m
+    │
+    ├── Circuit/
+    │   └── circuit_diagram.png
+    │
+    ├── Documentation/
+    │   └── project_report.pdf
+    │
+    └── Images/
+        └── prototype.jpg
+        
 🚀 How to Upload the ESP32 Program
 1. Install Arduino IDE
 Install Arduino IDE on your computer.
@@ -349,6 +340,7 @@ Upload
 If the board remains at:
 Connecting........
 press and hold the BOOT button on the ESP32 for a few seconds until uploading starts.
+
 🖥️ Serial Monitor
 After uploading the program, open the Serial Monitor.
 Set:
@@ -368,6 +360,7 @@ STATE: REVERSE PARKING
 ==============================
         VEHICLE PARKED
 ==============================
+
 🛠️ Testing Procedure
 The vehicle should be tested in stages:
 Test 1 — Ultrasonic Sensors
@@ -380,6 +373,7 @@ Test 4 — Obstacle Detection
 Place an object in front of the vehicle and verify that the emergency-stop mechanism activates.
 Test 5 — Autonomous Parking
 Place the vehicle in the test area and allow the state machine to execute the parking sequence.
+
 🛡️ Safety Considerations
 - Always test motor movement with the wheels lifted initially.
 - Verify battery polarity before powering the circuit.
@@ -390,6 +384,7 @@ Place the vehicle in the test area and allow the state machine to execute the pa
 - Check the motor driver's current capability before operating all four motors.
 - Keep the emergency-stop mechanism active during testing.
 - Stop testing immediately if the motor driver, battery, or wiring becomes excessively hot.
+
 🔮 Future Enhancements
 The project can be further developed with:
 - 📱 Wi-Fi-based vehicle control
@@ -404,6 +399,7 @@ The project can be further developed with:
 - 📱 Mobile application
 - 🧠 Advanced path-planning algorithms
 - 🎛️ PID-based motion control
+
 🎯 Applications
 The concept can be applied to:
 - Smart parking systems
@@ -415,6 +411,7 @@ The concept can be applied to:
 - Embedded-system education
 - Robotics research
 - EV automation projects
+
 📚 Project Highlights
 Hardware
 ESP32 + 4 Ultrasonic Sensors + 8-bit IR Array + L298N + 4 DC Motors
@@ -426,6 +423,7 @@ Development
 Arduino IDE + MATLAB
 Domain
 IoT | Embedded Systems | Robotics | Autonomous Vehicles
+
 👨‍💻 Project Information
 Project: Autonomous Parking Vehicle Using ESP32
 Controller: ESP32
@@ -434,6 +432,7 @@ Simulation: MATLAB
 Sensors: HC-SR04 + 8-bit IR Array
 Motor Driver: L298N
 Application: Autonomous Parking
+
 ⭐ Project Goal
 The primary goal of this project is to develop a compact autonomous vehicle capable of detecting its surroundings, avoiding obstacles, identifying boundaries, and performing an automated parking maneuver using an ESP32-based embedded control system.
 📜 License
