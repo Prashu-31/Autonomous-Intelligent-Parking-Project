@@ -125,20 +125,20 @@ Sensor Arrangement
                      
 **🚘 Motor Driver Connections**
 The project uses an L298N motor driver.
-| L298N Pin | ESP32 GPIO |
-|---|---:|
-| ENA | GPIO 4 |
-| IN1 | GPIO 16 |
-| IN2 | GPIO 17 |
-| IN3 | GPIO 18 |
-| IN4 | GPIO 19 |
-| ENB | GPIO 21 |
-Motor Connections
-L298N OUT1 ───── Left Motor 1
-L298N OUT2 ───── Left Motor 2
 
-L298N OUT3 ───── Right Motor 1
-L298N OUT4 ───── Right Motor 2
+    | L298N Pin | ESP32 GPIO |
+    |---|---:|
+    | ENA | GPIO 4 |
+    | IN1 | GPIO 16 |
+    | IN2 | GPIO 17 |
+    | IN3 | GPIO 18 |
+    | IN4 | GPIO 19 |
+    | ENB | GPIO 21 |
+    Motor Connections
+    L298N OUT1 ───── Left Motor 1
+    L298N OUT2 ───── Left Motor 2
+    L298N OUT3 ───── Right Motor 1
+    L298N OUT4 ───── Right Motor 2
 
 The two motors on each side operate together.
              FRONT
@@ -164,26 +164,26 @@ D6
 D7
 D8
 The eight digital outputs are connected to a 74HC165 8-bit parallel-in/serial-out shift register.
-IR Array → 74HC165
-IR ARRAY              74HC165
 
-VCC  ──────────────── VCC
-GND  ──────────────── GND
-
-D1   ──────────────── D0
-D2   ──────────────── D1
-D3   ──────────────── D2
-D4   ──────────────── D3
-D5   ──────────────── D4
-D6   ──────────────── D5
-D7   ──────────────── D6
-D8   ──────────────── D7
-74HC165 → ESP32
-74HC165	ESP32
-DATA / Q7	GPIO 22
-CLOCK / CP	GPIO 23
-LOAD / PL	GPIO 13
-
+    IR Array → 74HC165
+    IR ARRAY              74HC165
+    
+    VCC  ──────────────── VCC
+    GND  ──────────────── GND
+    
+    D1   ──────────────── D0
+    D2   ──────────────── D1
+    D3   ──────────────── D2
+    D4   ──────────────── D3
+    D5   ──────────────── D4
+    D6   ──────────────── D5
+    D7   ──────────────── D6
+    D8   ──────────────── D7
+    74HC165 → ESP32
+    74HC165	ESP32
+    DATA / Q7	GPIO 22
+    CLOCK / CP	GPIO 23
+    LOAD / PL	GPIO 13
 
 The shift register allows all eight IR sensor states to be read using only three ESP32 GPIO pins.
 ⚡ Power Supply
