@@ -357,9 +357,9 @@ STATE: POSITION
 
 STATE: REVERSE PARKING
 
-==============================
-        VEHICLE PARKED
-==============================
+    ==============================
+            VEHICLE PARKED
+    ==============================
 
 🛠️ Testing Procedure
 The vehicle should be tested in stages:
